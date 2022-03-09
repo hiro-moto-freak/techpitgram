@@ -3,4 +3,7 @@ Rails.application.routes.draw do
     controllers: { registrations: 'registrations' }
   root to: 'pages#home'
   resources :users, only: [:show]
+  resources :posts, only: [:new, :create] do
+    resources :photos, only: [:create]
+  end
 end
