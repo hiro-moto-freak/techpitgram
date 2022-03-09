@@ -6,6 +6,7 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { maximum: 50 }
 
   has_many :posts, dependent: :destroy
+  has_many :likes,
 
   def update_without_current_password(params, *options)
 
