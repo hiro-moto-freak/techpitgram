@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     controllers: { registrations: 'registrations' }
   root to: 'posts#index'
   resources :users, only: [:show]
-  resources :posts, only: [:new, :create, :index] do
+  resources :posts, only: [:new, :create, :index, :show] do
     resources :photos, only: [:create]
   end
 end
